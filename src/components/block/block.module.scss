@@ -1,0 +1,66 @@
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+
+.block {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 14px rgba(214, 214, 214, 0.2);
+  border-radius: 30px;
+  padding: 48px;
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: calc(100% - 28px);
+    height: 50px;
+    background-color: #fff4ce;
+    box-shadow: 0px 0px 14px rgba(214, 214, 214, 0.2);
+    border-radius: 30px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  @include rwd-mobile(sm) {
+    padding: 32px;
+  }
+  @include rwd-mobile(xs) {
+    border-radius: 20px;
+    padding: 24px 16px;
+  }
+}
+
+.block_primary {
+  margin-top: 74px;
+  margin-bottom: 60px;
+  &.block_restaurant {
+    &:before {
+      background-color: #ffd7ce;
+    }
+  }
+  &.block_hotel {
+    &:before {
+      background-color: #cef0ff;
+    }
+  }
+}
+
+.block_secondary {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  background-color: rgba(255, 244, 206, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+  &:before {
+    display: none;
+  }
+  &.block_restaurant {
+    background-color: rgba(255, 215, 206, 0.3);
+  }
+  &.block_hotel {
+    background-color: rgba(206, 240, 255, 0.3);
+  }
+  @include rwd-mobile(sm) {
+    padding: 20px;
+  }
+}

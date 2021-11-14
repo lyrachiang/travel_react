@@ -1,0 +1,82 @@
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+
+.box {
+  display: flex;
+  align-items: center;
+  .ico_wrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+  }
+  h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 46px;
+    color: #484e60;
+  }
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: #8c8f97;
+  }
+  span {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #70c5a1;
+  }
+  @include rwd-mobile(sm) {
+    flex-wrap: wrap;
+  }
+  @include rwd-mobile(xs) {
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    span {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
+
+.box > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.box > div:nth-child(2) {
+  flex: 1 0 50%;
+  p {
+    word-break: break-all;
+  }
+}
+
+.box_title {
+  // align-items: flex-end;
+  p {
+    padding: 0 20px;
+  }
+  span {
+    display: inline-block;
+    padding: 0 7px;
+  }
+  @include rwd-mobile(sm) {
+    p {
+      padding: 0 30px;
+    }
+  }
+}
+
+.box_info {
+  align-items: flex-start;
+}

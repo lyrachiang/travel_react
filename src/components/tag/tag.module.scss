@@ -1,0 +1,22 @@
+@import '../../assets/css/variable';
+@import '../../assets/css/mixin';
+
+.tag {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  background-color: #EAEAEA;
+  border-radius: 30px;
+  padding: 6px 12px;
+}
+
+.tag_class {
+  color: #A7927A;
+  background-color: #FFF4CE;
+}
+
+.tag_level {
+  color: #9A7373;
+  background-color: #FFDDCE;
+}

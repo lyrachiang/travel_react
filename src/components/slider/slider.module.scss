@@ -1,0 +1,54 @@
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  margin: 0 -14px;
+  padding-top: 30px;
+  cursor: pointer;
+  > div {
+    flex: 0 0 30%;
+    transition: 0.3s all;
+    > .gap {
+      padding: 0 14px;
+    }
+  }
+  .img_box {
+    margin: 24px 0;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    opacity: 0.7;
+    width: 100%;
+    padding-bottom: 68%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  > div.active {
+    flex: 0 0 40%;
+    .img_box {
+      margin: 0;
+      opacity: 1;
+      transition: 0.3s all;
+    }
+  }
+  @include rwd-mobile(sm) {
+    overflow: hidden;
+    > div {
+      flex: 0 0 100%;
+      display: none;
+      opacity: 0;
+      transition: 0.3s all;
+    }
+    .img_box {
+      margin: 0;
+    }
+    > div.active {
+      flex: 0 0 100%;
+      display: block;
+      opacity: 1;
+      transition: 0.3s all;
+    }
+  }
+}

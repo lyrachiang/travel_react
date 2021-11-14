@@ -1,0 +1,41 @@
+$break-sss: 374px;
+$break-ss: 479px;
+$break-xs: 575px;
+$break-sm: 768px;
+$break-md: 991px;
+$break-lg: 1199px;
+
+@mixin rwd-mobile($media) {
+  @if ($media == ss) {
+    @media (max-width: $break-ss) {
+      @content;
+    }
+  } @else if ($media == xs) {
+    @media (max-width: $break-xs) {
+      @content;
+    }
+  } @else if ($media == sm) {
+    @media (max-width: $break-sm) {
+      @content;
+    }
+  } @else if ($media == md) {
+    @media (max-width: $break-md) {
+      @content;
+    }
+  } @else if ($media == lg) {
+    @media (max-width: $break-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin card($gap, $percent) {
+  display: flex;
+  margin: 0 -#{$gap}px;
+  > div {
+    flex: 0 0 $percent;
+    .gap {
+      padding: 0 #{$gap}px;
+    }
+  }
+}

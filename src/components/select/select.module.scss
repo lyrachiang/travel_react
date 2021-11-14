@@ -1,0 +1,105 @@
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+
+.select_container {
+  display: inline-flex;
+  width: 360px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(149, 141, 130, 0.1);
+  border-radius: 50px;
+  padding: 10px 20px;
+  position: relative;
+  .ico_wrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+  }
+  select {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    line-height: 29px;
+    color: #b8c2bf;
+    background-color: #ffffff;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  .ico_arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  select {
+    display: none;
+  }
+  @include rwd-mobile(sm) {
+    select {
+      display: inline-block;
+    }
+  }
+  @include rwd-mobile(xs) {
+    width: 300px;
+    padding: 10px;
+  }
+}
+
+.custom_select {
+  width: 100%;
+  font-size: 20px;
+  line-height: 29px;
+  color: #b8c2bf;
+  cursor: pointer;
+  @include rwd-mobile(sm) {
+    display: none;
+  }
+}
+
+.custom_select_list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: #ffffff;
+  box-shadow: 2px 2px 12px rgba(149, 141, 130, 0.1);
+  border-radius: 20px;
+  max-height: 217px;
+  overflow-y: scroll;
+  padding: 8px 20px;
+  margin-top: 8px;
+  li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eaeaea;
+    &:last-child {
+      border-bottom: none;
+    }
+    button {
+      width: 100%;
+      border: none;
+      font-size: 20px;
+      line-height: 29px;
+      color: #b8c2bf;
+      background-color: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+  }
+  &.active {
+    display: block;
+  }
+  @include rwd-mobile(sm) {
+    display: none;
+  }
+}

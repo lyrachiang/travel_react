@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// package
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
+
+import LayoutProvider from './providers/layout_provider';
+import Layout from './components/layout';
+
+import Home from './views/home';
+import Activity from './views/activity';
+import Attraction from './views/attraction';
+import Restaurant from './views/restaurant';
+import Hotel from './views/hotel';
+import Components from './views/components';
+
+const ScrollToTop = (props) => {
+  const { children } = props;
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{children}</>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LayoutProvider>
+      <Router basename={process.env.PUBLIC_URL}>
+        <ScrollToTop>
+          <Layout>
+            <Route path="/" exact component={Home} />
+            <Route path={["/activity", "/activity/:id"]} component={Activity} />
+            <Route path={["/attraction", "/attraction/:id"]} component={Attraction} />
+            <Route path={["/restaurant", "/restaurant/:id"]} component={Restaurant} />
+            <Route path={["/hotel", "/hotel/:id"]} component={Hotel} />
+            <Route path="/components" component={Components} />
+          </Layout>
+        </ScrollToTop>
+      </Router>
+    </LayoutProvider>
   );
 }
 

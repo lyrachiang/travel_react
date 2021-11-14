@@ -1,0 +1,14 @@
+export { ReactComponent as ArrowLeftIcon } from './imgs/arrow_left.svg';
+export { ReactComponent as ArrowRightIcon } from './imgs/arrow_right.svg';
+export { ReactComponent as BuildingIcon } from './imgs/building.svg';
+export { ReactComponent as CalendarIcon } from './imgs/calendar.svg';
+export { ReactComponent as CarIcon } from './imgs/car.svg';
+export { ReactComponent as CaretDownIcon } from './imgs/caret_down.svg';
+export { ReactComponent as ClockIcon } from './imgs/clock.svg';
+export { ReactComponent as GlobeAsiaIcon } from './imgs/globe_asia.svg';
+export { ReactComponent as LocationIcon } from './imgs/location.svg';
+export { ReactComponent as LocationArrowIcon } from './imgs/location_arrow.svg';
+export { ReactComponent as LongArrowLeftIcon } from './imgs/long_arrow_left.svg';
+export { ReactComponent as LongArrowRightIcon } from './imgs/long_arrow_right.svg';
+export { ReactComponent as MapMarkerAltIcon } from './imgs/map_marker_alt.svg';
+export { ReactComponent as PhoneIcon } from './imgs/phone.svg';

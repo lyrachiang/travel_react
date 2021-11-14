@@ -1,0 +1,365 @@
+@import "../../../assets/css/variable";
+@import "../../../assets/css/mixin";
+
+.page_block {
+  > div {
+    padding: 40px 0;
+    border-bottom: 1px solid #b8c2bf;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.profile_container {
+  h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 58px;
+    color: #484e60;
+    margin-bottom: 16px;
+  }
+  p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 32px;
+    color: #484e60;
+  }
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    > div {
+      flex: 0 0 50%;
+      > .gap {
+        padding: 0 20px;
+      }
+    }
+    > div:nth-child(1) {
+      flex: 0 0 58%;
+    }
+    > div:nth-child(2) {
+      flex: 0 0 42%;
+    }
+  }
+  @include rwd-mobile(sm) {
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 16px;
+    }
+    > div {
+      > div,
+      > div:nth-child(1),
+      > div:nth-child(2) {
+        flex: 0 0 100%;
+      }
+      > div:nth-child(1) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @include rwd-mobile(xs) {
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.profile_block {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 20px;
+  > div {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  > div > div:nth-child(1) {
+    p {
+      margin: 0;
+      word-break: keep-all;
+      font-size: 16px;
+      line-height: 23px;
+      color: #8c8f97;
+    }
+  }
+  > div > div:nth-child(2) {
+    p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 28px;
+      color: #484e60;
+    }
+  }
+  a {
+    color: #484e60;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include rwd-mobile(sm) {
+    padding: 12px;
+  }
+}
+
+.tag_container {
+  display: flex;
+  align-items: center;
+  margin: 0 -4px;
+  margin-top: 12px;
+  > div {
+    flex: 0 0 auto;
+    > .gap {
+      padding: 0 4px;
+    }
+  }
+  @include rwd-mobile(xs) {
+    margin: 0 -2px;
+    > div > .gap {
+      padding: 0 2px;
+    }
+  }
+}
+
+.hotel_title_box,
+.restaurant_title_box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  > button {
+    flex: 0 0 auto;
+  }
+  @include rwd-mobile(xs) {
+    flex-wrap: wrap;
+    > div {
+      flex: 0 0 100%;
+    }
+    > button {
+      margin-top: 10px;
+      margin-left: auto;
+    }
+  }
+}
+
+.hotel_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  > div {
+    flex: 0 0 33.33%;
+    > .gap {
+      padding: 0 10px;
+    }
+  }
+  .hotel_card_box {
+    overflow: hidden;
+    h3 {
+      margin: 0;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 35px;
+      color: #484e60;
+      margin-bottom: 16px;
+    }
+    .desc {
+      margin: 0;
+      font-size: 16px;
+      line-height: 23px;
+      color: #484e60;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 16px;
+    }
+  }
+  .hotel_info_box {
+    padding: 16px 16px 20px;
+  }
+  .spec_block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    .spec_box {
+      background-color: rgba(112, 197, 161, 0.1);
+      border-radius: 4px;
+      padding: 6px 10px;
+      margin-right: 4px;
+      margin-bottom: 2px;
+      > div:nth-child(1) {
+        p {
+          margin: 0;
+          font-size: 14px;
+          line-height: 20px;
+          color: #8c8f97;
+        }
+      }
+      > div:nth-child(2) {
+        p {
+          margin: 0;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 22px;
+          color: #70c5a1;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .extra_info_block {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 -6px;
+    margin-bottom: 18px;
+    > div {
+      flex: 0 0 auto;
+      > .gap {
+        padding: 0 6px;
+      }
+    }
+    > div:nth-child(1) {
+      flex: 0 0 15%;
+    }
+    > div:nth-child(2) {
+      flex: 0 1 85%;
+    }
+    .parking_img {
+      border: 2px solid #c5eedd;
+      border-radius: 4px;
+      position: relative;
+      i {
+        display: block;
+        padding: 6px;
+      }
+      > span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background-color: #f59c9c;
+        border-radius: 100%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        span {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 12px;
+          color: #ffffff;
+        }
+      }
+    }
+    .service_box {
+      p {
+        margin: 0;
+        font-size: 12px;
+        line-height: 14px;
+        color: #8c8f97;
+      }
+    }
+  }
+  @include rwd-mobile(sm) {
+    > div {
+      flex: 0 0 50%;
+    }
+    > div:last-child {
+      display: none;
+    }
+  }
+  @include rwd-mobile(xs) {
+    > div {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.restaurant_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  > div {
+    flex: 0 0 33.33%;
+    > .gap {
+      padding: 0 10px;
+    }
+  }
+  .restaurant_card_box {
+    overflow: hidden;
+    h3 {
+      margin: 0;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 35px;
+      color: #484e60;
+      margin-bottom: 16px;
+    }
+    .desc {
+      margin: 0;
+      font-size: 16px;
+      line-height: 23px;
+      color: #484e60;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 16px;
+    }
+  }
+  .restaurant_info_box {
+    padding: 16px 16px 20px;
+  }
+  .restaurant_extra_info_box {
+    > div > div:nth-child(1) {
+      p {
+        margin: 0;
+        word-break: keep-all;
+        font-size: 16px;
+        line-height: 23px;
+        color: #8c8f97;
+      }
+    }
+    > div > div:nth-child(2) {
+      p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 28px;
+        color: #484e60;
+      }
+    }
+  }
+  @include rwd-mobile(sm) {
+    > div {
+      flex: 0 0 50%;
+    }
+    > div:last-child {
+      display: none;
+    }
+  }
+  @include rwd-mobile(xs) {
+    > div {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

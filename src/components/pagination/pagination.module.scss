@@ -1,0 +1,64 @@
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+
+.pagination_container {
+  text-align: right;
+  > ul {
+    display: inline-flex;
+  }
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    border-color: transparent;
+    background-color: #eaeaea;
+    box-shadow: 2px 2px 12px rgba(149, 141, 130, 0.1);
+    cursor: pointer;
+    &:hover {
+      background-color: #ffc58f;
+    }
+    span {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 14px;
+      color: #ffffff;
+    }
+  }
+  li {
+    padding: 0 10px;
+    &.active {
+      button {
+        background-color: #ffc58f;
+      }
+    }
+    &.disabled,
+    &:disabled {
+      button {
+        cursor: not-allowed;
+      }
+    }
+  }
+  .arrow {
+    button {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  @include rwd-mobile(sm) {
+    > ul {
+      justify-content: center;
+    }
+    li {
+      padding: 0 5px;
+    }
+  }
+  @include rwd-mobile(xs) {
+    text-align: center;
+  }
+}

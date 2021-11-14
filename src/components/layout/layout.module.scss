@@ -1,0 +1,14 @@
+@import '../../assets/css/variable';
+@import '../../assets/css/mixin';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  > div {
+    flex: 0 0 auto;
+    &:nth-child(2) {
+      flex: 1 0 auto;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../../assets/css/variable';
+@import '../../../assets/css/mixin';
+
+.footer_container {
+  text-align: center;
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #B8C2BF;
+    padding: 20px 0;
+  }
+  @include rwd-mobile(sm) {
+    p {
+      padding: 10px 0;
+    }
+  }
+}

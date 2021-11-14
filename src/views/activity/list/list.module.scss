@@ -1,0 +1,126 @@
+@import "../../../assets/css/variable";
+@import "../../../assets/css/mixin";
+
+.title_container {
+  padding-top: 30px;
+  h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 61px;
+    color: #484e60;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .filter_block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    > div {
+      padding: 0 16px;
+    }
+  }
+  @include rwd-mobile(xs) {
+    h2 {
+      font-size: 32px;
+      line-height: 44px;
+    }
+    .filter_block {
+      > div:nth-child(2) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.activity_title_box {
+  margin-bottom: 40px;
+  @include rwd-mobile(xs) {
+    margin-bottom: 20px;
+  }
+}
+
+.card_container {
+  > div {
+    margin-bottom: 32px;
+  }
+}
+
+.card_box {
+  h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    color: #484e60;
+    margin-bottom: 20px;
+  }
+  .desc {
+    margin: 0;
+    font-size: 16px;
+    line-height: 32px;
+    color: #484e60;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+  }
+  .date {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8c8f97;
+    margin-bottom: 16px;
+  }
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @include rwd-mobile(xs) {
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 10px;
+    }
+    .desc {
+      line-height: 26px;
+    }
+  }
+}
+
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  > div {
+    margin-bottom: 10px;
+  }
+  > div:nth-child(2) {
+    margin-left: auto;
+  }
+}
+
+.tag_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -6px;
+  > div {
+    flex: 0 0 auto;
+    margin-bottom: 4px;
+    > .gap {
+      padding: 0 6px;
+    }
+  }
+  @include rwd-mobile(xs) {
+    margin: 0 -2px;
+    > div > .gap {
+      padding: 0 2px;
+    }
+  }
+}
