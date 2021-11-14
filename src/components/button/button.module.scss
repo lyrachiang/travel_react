@@ -1,12 +1,13 @@
-@import '../../assets/css/variable';
-@import '../../assets/css/mixin';
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
 
 .btn {
   display: inline-flex;
+  margin: 0;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   background-color: transparent;
@@ -41,18 +42,18 @@
 
 .btn_primary {
   font-weight: 700;
-  background-color: #70C5A1;
+  background-color: #70c5a1;
   box-shadow: 2px 2px 12px rgba(149, 141, 130, 0.1);
   &:hover {
-    background-color: #FFC58F;
+    background-color: #ffc58f;
   }
 }
 
 .btn_secondary {
   font-size: 14px;
   line-height: 16px;
-  color: #70C5A1;
-  border: 1px solid #70C5A1;
+  color: #70c5a1;
+  border: 1px solid #70c5a1;
   box-shadow: 2px 2px 12px rgba(149, 141, 130, 0.1);
   &:hover {
     background-color: rgba(255, 244, 206, 0.3);

@@ -162,7 +162,7 @@
     }
   }
   > div:nth-child(1) {
-    flex: 0 0 15%;
+    flex: 0 0 auto;
   }
   > div:nth-child(2) {
     flex: 0 1 85%;
@@ -172,7 +172,7 @@
     border-radius: 4px;
     position: relative;
     i {
-      display: block;
+      display: flex;
       padding: 6px;
     }
     > span {
@@ -224,6 +224,7 @@
 
 .choose_container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding-top: 40px;
   > div:nth-child(1) {

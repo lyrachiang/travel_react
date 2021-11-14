@@ -21,15 +21,20 @@
       padding: 0 16px;
     }
   }
+  @include rwd-mobile(md) {
+    h2 {
+      margin-bottom: 0px;
+    }
+    .filter_block {
+      > div {
+        margin-top: 20px;
+      }
+    }
+  }
   @include rwd-mobile(xs) {
     h2 {
       font-size: 32px;
       line-height: 44px;
-    }
-    .filter_block {
-      > div:nth-child(2) {
-        margin-top: 20px;
-      }
     }
   }
 }

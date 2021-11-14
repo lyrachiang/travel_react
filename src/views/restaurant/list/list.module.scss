@@ -66,4 +66,9 @@
       flex: 0 0 50%;
     }
   }
+  @include rwd-mobile(xs) {
+    > div {
+      flex: 0 0 100%;
+    }
+  }
 }
