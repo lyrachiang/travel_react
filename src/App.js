@@ -10,7 +10,6 @@ import Activity from './views/activity';
 import Attraction from './views/attraction';
 import Restaurant from './views/restaurant';
 import Hotel from './views/hotel';
-import Components from './views/components';
 
 const ScrollToTop = (props) => {
   const { children } = props;
@@ -34,7 +33,6 @@ function App() {
             <Route path={["/attraction", "/attraction/:id"]} component={Attraction} />
             <Route path={["/restaurant", "/restaurant/:id"]} component={Restaurant} />
             <Route path={["/hotel", "/hotel/:id"]} component={Hotel} />
-            <Route path="/components" component={Components} />
           </Layout>
         </ScrollToTop>
       </Router>
