@@ -31,16 +31,25 @@ export const restaurantSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRestaurantCnt.fulfilled, (state, action) => {
+      .addCase(fetchRestaurantCnt.pending, (state) => {
         state.isRestaurantLoading = true;
+      })
+      .addCase(fetchRestaurantCnt.fulfilled, (state, action) => {
+        state.isRestaurantLoading = false;
         state.totalRows = action.payload.length;
       })
-      .addCase(fetchRestaurant.fulfilled, (state, action) => {
+      .addCase(fetchRestaurant.pending, (state) => {
         state.isRestaurantLoading = true;
+      })
+      .addCase(fetchRestaurant.fulfilled, (state, action) => {
+        state.isRestaurantLoading = false;
         state.restaurantList = action.payload;
       })
-      .addCase(fetchRestaurantById.fulfilled, (state, action) => {
+      .addCase(fetchRestaurantById.pending, (state) => {
         state.isRestaurantLoading = true;
+      })
+      .addCase(fetchRestaurantById.fulfilled, (state, action) => {
+        state.isRestaurantLoading = false;
         state.restaurantInfo = action.payload;
       });
   },

@@ -31,16 +31,25 @@ export const hotelSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchHotelCnt.fulfilled, (state, action) => {
+      .addCase(fetchHotelCnt.pending, (state) => {
         state.isHotelLoading = true;
+      })
+      .addCase(fetchHotelCnt.fulfilled, (state, action) => {
+        state.isHotelLoading = false;
         state.totalRows = action.payload.length;
       })
-      .addCase(fetchHotel.fulfilled, (state, action) => {
+      .addCase(fetchHotel.pending, (state) => {
         state.isHotelLoading = true;
+      })
+      .addCase(fetchHotel.fulfilled, (state, action) => {
+        state.isHotelLoading = false;
         state.hotelList = action.payload;
       })
-      .addCase(fetchHotelById.fulfilled, (state, action) => {
+      .addCase(fetchHotelById.pending, (state) => {
         state.isHotelLoading = true;
+      })
+      .addCase(fetchHotelById.fulfilled, (state, action) => {
+        state.isHotelLoading = false;
         state.hotelInfo = action.payload;
       });
   },

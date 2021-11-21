@@ -30,24 +30,39 @@ export const attractionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAttractionCnt.fulfilled, (state, action) => {
+      .addCase(fetchAttractionCnt.pending, (state) => {
         state.isAttractionLoading = true;
+      })
+      .addCase(fetchAttractionCnt.fulfilled, (state, action) => {
+        state.isAttractionLoading = false;
         state.totalRows = action.payload.length;
+      })
+      .addCase(fetchAttraction.pending, (state) => {
+        state.isAttractionLoading = true;
       })
       .addCase(fetchAttraction.fulfilled, (state, action) => {
-        state.isAttractionLoading = true;
+        state.isAttractionLoading = false;
         state.attractionList = action.payload;
       })
-      .addCase(fetchAttractionById.fulfilled, (state, action) => {
+      .addCase(fetchAttractionById.pending, (state) => {
         state.isAttractionLoading = true;
+      })
+      .addCase(fetchAttractionById.fulfilled, (state, action) => {
+        state.isAttractionLoading = false;
         state.attractionInfo = action.payload;
       })
-      .addCase(fetchAttractionByCityCnt.fulfilled, (state, action) => {
+      .addCase(fetchAttractionByCityCnt.pending, (state) => {
         state.isAttractionLoading = true;
+      })
+      .addCase(fetchAttractionByCityCnt.fulfilled, (state, action) => {
+        state.isAttractionLoading = false;
         state.totalRows = action.payload.length;
       })
-      .addCase(fetchAttractionByCity.fulfilled, (state, action) => {
+      .addCase(fetchAttractionByCity.pending, (state) => {
         state.isAttractionLoading = true;
+      })
+      .addCase(fetchAttractionByCity.fulfilled, (state, action) => {
+        state.isAttractionLoading = false;
         state.attractionList = action.payload;
       });
   },

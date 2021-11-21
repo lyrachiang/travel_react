@@ -30,24 +30,39 @@ export const activitySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchActivityCnt.fulfilled, (state, action) => {
+      .addCase(fetchActivityCnt.pending, (state) => {
         state.isActivityLoading = true;
+      })
+      .addCase(fetchActivityCnt.fulfilled, (state, action) => {
+        state.isActivityLoading = false;
         state.totalRows = action.payload.length;
+      })
+      .addCase(fetchActivity.pending, (state) => {
+        state.isActivityLoading = true;
       })
       .addCase(fetchActivity.fulfilled, (state, action) => {
-        state.isActivityLoading = true;
+        state.isActivityLoading = false;
         state.activityList = action.payload;
       })
-      .addCase(fetchActivityById.fulfilled, (state, action) => {
+      .addCase(fetchActivityById.pending, (state) => {
         state.isActivityLoading = true;
+      })
+      .addCase(fetchActivityById.fulfilled, (state, action) => {
+        state.isActivityLoading = false;
         state.activityInfo = action.payload;
       })
-      .addCase(fetchActivityByCityCnt.fulfilled, (state, action) => {
+      .addCase(fetchActivityByCityCnt.pending, (state) => {
         state.isActivityLoading = true;
+      })
+      .addCase(fetchActivityByCityCnt.fulfilled, (state, action) => {
+        state.isActivityLoading = false;
         state.totalRows = action.payload.length;
       })
-      .addCase(fetchActivityByCity.fulfilled, (state, action) => {
+      .addCase(fetchActivityByCity.pending, (state) => {
         state.isActivityLoading = true;
+      })
+      .addCase(fetchActivityByCity.fulfilled, (state, action) => {
+        state.isActivityLoading = false;
         state.activityList = action.payload;
       });
   },
